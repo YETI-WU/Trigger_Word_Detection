@@ -25,3 +25,5 @@ Conv1D → BatchNorm → ReLU → Dropout(0.8) →
 time-distributed dense layer  
 X = TimeDistributed(Dense(1, activation = "sigmoid"))(X)  
 wrapper applies a layer to every temporal slice of an input  
+
+Dense+Sigmoid layer to make a prediction y⟨t⟩, binary valued (0 or 1).  
