@@ -14,6 +14,7 @@ noverlap = 120 # Overlap between windows
 
 ## Architecture 
 ![](images/model_TriggerWordDetection.png)
+
 ### Step 1: CONV layer
 1D convolutional (num filters = 196, filter size = 15, stride = 4)   extracting low-level features  
 output step 1375  ← Ty  
