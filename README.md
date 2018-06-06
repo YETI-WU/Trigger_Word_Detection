@@ -3,20 +3,23 @@ uni-directional RNN with 2 GRU layers to detect Trigger Word.
 Andrew Ng deeplearning.ai course project accomplishment  
   
 sample : 10 second  44,100 Hz  
-scipy.io.wavfile.read(wav_file)  
-matplotlib.pyplot.specgram   
-output : spectrum (2-D array),  columns are the periodograms of successive segments.  
-timesteps of the spectrogram : 5,511  ← Tx  
+### Read the wave file
+#### scipy.io.wavfile.read(wav_file)  
+### Calculate and plot spectrogram for a wav audio file  
+#### matplotlib.pyplot.specgram   
+
 nfft = 200 # Length of each window segment   
 fs = 8000 # Sampling frequencies  
 noverlap = 120 # Overlap between windows  
 ( 441,000 – 120 ) / ( 200 – 120 ) = 5,511  
+output : spectrum (2-D array),  columns are the periodograms of successive segments.  
+timesteps of the spectrogram : 5,511  ← Tx  
 
 ## Architecture 
 ![](images/model_TriggerWordDetection.png)
 
 ### Step 1: CONV layer
-1D convolutional (num filters = 196, filter size = 15, stride = 4)   extracting low-level features  
+1D convolutional (num filters = 196, filter size = 15, stride = 4)  # extracting low-level features  
 output step 1375  ← Ty  
 (n+2p–f)/s+1 = (5,511–15)/4 + 1  = 1,375    
 ### Step 2: First GRU Layer 
